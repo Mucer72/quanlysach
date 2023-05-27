@@ -14,21 +14,15 @@ namespace QuanLySachCaNhan
     public partial class UserControl1 : UserControl
     {
         DataReader reader = new DataReader();
-        QuanLySach qls = new QuanLySach();
-        List<Sach> Sach = new List<Sach>();
+        string ID;
 
-        public UserControl1(string name, string link)
+        public UserControl1(string id, string name, string link)
         {
             InitializeComponent();
             this.lblName.Text = name;
             this.pbHinh.Image = Image.FromFile("./100_bd275c22338e4df3a7b01a0b8553e338_master.jpg");
+            ID=id;
         }
-        
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void pbHinh_MouseEnter(object sender, EventArgs e)
         {
             pbHinh.BorderStyle = BorderStyle.FixedSingle;
@@ -39,6 +33,18 @@ namespace QuanLySachCaNhan
         {
             pbHinh.BorderStyle = BorderStyle.Fixed3D;
             this.BackColor = Color.White;
+        }
+
+        private void pbHinh_Click(object sender, EventArgs e)
+        {
+            frmSach form = new frmSach(ID);
+            form.ShowDialog();
+            
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+            pbHinh_Click(sender,e);
         }
     }
 }

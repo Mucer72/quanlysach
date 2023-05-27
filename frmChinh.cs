@@ -16,7 +16,7 @@ namespace QuanLySachCaNhan
     public partial class frmChinh : Form
     {
         DataReader reader = new DataReader();
-        QuanLySach DanhSach = new QuanLySach();
+        public QuanLySach DanhSach = new QuanLySach();
 
         //private int rowCount = 1; // số hàng hiện tại
         //private int panelCount = 1; // số panel hiện tại
@@ -36,7 +36,7 @@ namespace QuanLySachCaNhan
             UserControl1 sach;
             foreach(Sach s in DanhSach.qlsach)
             {
-                sach = new UserControl1(s.TenSach, s.LinkHinh);
+                sach = new UserControl1(s.MaSach,s.TenSach, s.LinkHinh);
                 this.flowLayoutPanel1.Controls.Add(sach);
             }
         }

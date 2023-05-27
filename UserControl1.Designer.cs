@@ -36,25 +36,27 @@
             // pbHinh
             // 
             this.pbHinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbHinh.Location = new System.Drawing.Point(-2, -2);
+            this.pbHinh.Location = new System.Drawing.Point(0, 0);
             this.pbHinh.Margin = new System.Windows.Forms.Padding(2);
             this.pbHinh.Name = "pbHinh";
-            this.pbHinh.Size = new System.Drawing.Size(139, 190);
+            this.pbHinh.Size = new System.Drawing.Size(137, 188);
             this.pbHinh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbHinh.TabIndex = 0;
             this.pbHinh.TabStop = false;
+            this.pbHinh.Click += new System.EventHandler(this.pbHinh_Click);
             this.pbHinh.MouseEnter += new System.EventHandler(this.pbHinh_MouseEnter);
             this.pbHinh.MouseLeave += new System.EventHandler(this.pbHinh_MouseLeave);
             // 
             // lblName
             // 
-            this.lblName.Location = new System.Drawing.Point(0, 193);
+            this.lblName.Location = new System.Drawing.Point(-2, 190);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(139, 36);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "text";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // UserControl1
             // 
@@ -64,10 +66,10 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pbHinh);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Margin = new System.Windows.Forms.Padding(20, 7, 2, 2);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(135, 224);
-            this.Load += new System.EventHandler(this.UserControl1_Load);
+            this.Size = new System.Drawing.Size(135, 225);
             ((System.ComponentModel.ISupportInitialize)(this.pbHinh)).EndInit();
             this.ResumeLayout(false);
 

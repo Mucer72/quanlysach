@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace QuanLySachCaNhan
 {
-    internal class QuanLySach
+    public class QuanLySach
     {
         DataReader dataReader = new DataReader();
         public List<Sach> qlsach;

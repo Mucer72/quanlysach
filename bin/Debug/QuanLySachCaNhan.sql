@@ -88,7 +88,7 @@ insert into Sach values('S0013', N'Lưu Thông Máu Tốt Hóa Giải Bách Bệ
 insert into Sach values('S0014', N'Làm Sạch Mạch Và Máu', 247, '2021', null, N'Nishi Katsuzo', null,  'CD007')
 insert into Sach values('S0015', N'Kinh Thánh Tân Ước', 680, '2022', null, N'Nguyễn Thế Thuần - Dịch',  null, 'CD008')
 
-delete from Sach where MaCD = 'S0013'
+delete from Sach where MaSach = 'S0013'
 select * from Sach
 --Bảng Bạn đọc
 insert into BanDoc values('BD001', N'Nguyễn Tân Tiến', '0358358306', N'Lạc Lâm - Đơn Dương - Lâm Đồng')

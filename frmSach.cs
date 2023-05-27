@@ -14,22 +14,37 @@ namespace QuanLySachCaNhan
     {
         QuanLySach qlds = new QuanLySach();
         Sach s;
-        public frmSach()
+        public frmSach(string id)
         {
             InitializeComponent();
+            s=new Sach();
+            s.MaSach = id;
         }
 
         private void frmSach_Load(object sender, EventArgs e)
         {
-            s = new Sach();
-            lblTen.Text = "Conan";
-            lblTheLoai.Text = "Bí ẩn";
-            lblTacGia.Text = "Shogakukan";
-            lblNamXB.Text = "1996";
-            lblSoTrang.Text = "103";
-            lblTrangThai.Text = "25";
-            lblLoaiSach.Text = "Sách của tôi";
-            lblViTri.Text = "Tầng 1";
+            frmChinh form = (frmChinh)Application.OpenForms["frmChinh"];
+            foreach(Sach sach in form.DanhSach.qlsach)
+            {
+                if(sach.MaSach==s.MaSach)
+                {
+                    s = sach;
+                    break;
+                }
+            }
+            lblTen.Text = s.TenSach;
+            lblTheLoai.Text = "";
+            lblTacGia.Text = s.TacGia;
+            lblNamXB.Text = s.NamXB;
+            lblSoTrang.Text = s.SoTrang.ToString();
+            if(s.TrangThai==s.SoTrang)
+            {
+                lblTrangThai.Text = "Hoàn thành";
+            }    
+            else
+                lblTrangThai.Text = "Chưa hoàn thành";
+            lblLoaiSach.Text = "";
+            lblViTri.Text = s.ViTriSach;
 
 
             txtTen.Text = lblTen.Text;
@@ -56,7 +71,9 @@ namespace QuanLySachCaNhan
             btnOK.Visible = false;
             btnLuu.Visible = true;
             cboVitri.Visible = true;
-            lblTheLoai.Text = "Bí ẩn,Kinh dị, giật gân";
+            lblTT.Visible = true;
+            lblTrang.Visible = true;
+            lblTrangThai.Visible = false;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -74,6 +91,10 @@ namespace QuanLySachCaNhan
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void LoadId(string id)
         {
 
         }
